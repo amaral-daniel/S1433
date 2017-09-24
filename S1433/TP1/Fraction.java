@@ -41,7 +41,7 @@ public class Fraction {
   public Fraction(int n) {
     this(n,1); // appel de l'autre constructeur
   }
-
+ 
   /** Simplification canonique de la fraction. */
   public void simplifier() {
     if (num==0) {
@@ -76,6 +76,9 @@ public class Fraction {
     return num/(double)deno;
   }
 
+  public boolean estUnEntier() {
+	    return num%deno==0;
+	  }
   /** Conversion en chaîne de caractères. */
   public String toString() {
     return num+"/"+deno;
@@ -88,17 +91,36 @@ public class Fraction {
     //     System.out.println(o.toString(); )
     System.out.println(this+" = "+valeur());
   }
-  
   public int getNum()
   {
 	  return num;
   }
-
   public int getDeno()
   {
 	  return deno;
   }
-  
+  public static Fraction fractionAleatoire() {
+	    // Noter le static, car c'est une *fonction*.
+	    Fraction f=null;
+	    boolean exception=false;
+	    do {
+	      try{
+	        exception = false;
+	        int num = -10+(int)(20*Math.random());
+	        int denom = -10+(int)(20*Math.random());
+	        f = new Fraction(num,denom);
+	      }
+	      catch (ArithmeticException e) {
+	        System.err.println("mauvais tirage, on recommence...");
+	        exception = true;
+	      }
+	    } while (exception);
+	    return f;
+	  }
+  public void ajouter(Fraction f) {
+	    num = num*f.deno + deno*f.num;
+	    deno *= f.deno;
+	  }
   public boolean equals(Object f)
   {
 	  if(f instanceof Fraction)
@@ -112,7 +134,19 @@ public class Fraction {
 	  }
 	  return false;
 }
-  
+  public int compareTo(Fraction f)
+  {
+	  if(this.valeur() == f.valeur())
+	  {
+		  return 0;
+
+	  }  
+	  if(this.valeur() < f.valeur())
+	  {
+		  return -1;
+	  }
+	  return 1;
+}
   @Override public int hashCode()
   {
 	  return (num*100000 + deno);
