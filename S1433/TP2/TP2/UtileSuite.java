@@ -1,3 +1,4 @@
+package TP2;
 import java.lang.Math;
 
 public class UtileSuite {

@@ -1,3 +1,4 @@
+package TP2;
 // ----------------------------------------------
 // Ecole Nationale Supérieure des Mines de PARIS
 //           Programmation avancée
