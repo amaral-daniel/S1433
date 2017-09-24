@@ -69,7 +69,7 @@ public class EssaiExplorateur {
     //
     if (indianaJones!=null)
       essai(indianaJones);
-  }
+  } 
   
   /**
    * Fonction testant un Explorateur en le faisant évoluer

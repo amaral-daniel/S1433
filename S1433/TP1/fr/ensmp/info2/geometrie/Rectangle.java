@@ -1,8 +1,8 @@
 package fr.ensmp.info2.geometrie;
 
 public class Rectangle extends Figure{
-	float width,height;
-	
+	protected float width,height;
+	 
 	public Rectangle(String nom,Point centre,  float width, float height)
 	{
 		super(nom,centre);
@@ -17,6 +17,15 @@ public class Rectangle extends Figure{
 		this.width = width;
 		this.height = height;
 	}
+	
+	public Rectangle(float width, float height)
+	{
+		super(new Point(0,0));
+		this.height = height;
+		this.width = width;
+
+	}
+	
 	
 	public float surface()
 	{
@@ -38,7 +47,7 @@ public class Rectangle extends Figure{
 	
 	public String toString()
 	{
-		return "cercle " + nom + centre + width + " " + height;
+		return "Rectangle " + nom + centre + width + " " + height;
 	}
 	
 	public static void main(String[] args) {
