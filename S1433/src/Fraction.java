@@ -18,7 +18,7 @@ public class Fraction  implements Comparable<Fraction>{
       le dénominateur.
       @param n le numérateur.
       @param d le dénominateur.
-      @throws ArithmeticException si le dénominateur est null.   
+      @throws ArithmeticException si le dénominateur est null.     
   */ 
   public Fraction(int n, int d) {
     numerateur = n;
