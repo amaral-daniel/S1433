@@ -18,7 +18,7 @@ public class VehiculeMotorise extends Vehicule {
   public VehiculeMotorise(int nombreDeRoues, String marque, int puissance) {
     super(nombreDeRoues, marque); // appel du constructeur de la classe mère
     this.puissance = puissance;
-  }
+  } 
 
   public int getPuissance() { // Ajout de méthode
     return puissance;
@@ -29,7 +29,7 @@ public class VehiculeMotorise extends Vehicule {
   }
 
   public String toString() { // Redéfinition de méthode
-    return super.toString()+" avec un moteur de puissance "+puissance+ " CV";
+    return super.toString()+" avec un moteur de puissance "+ puissance+ " CV";
     // NOTE : super.toString() permet d'appeler la méthode de la classe mère
   }
 

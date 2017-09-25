@@ -20,7 +20,7 @@ public class Velo extends Vehicule {
       marque.
   */
   public String toString() { // Redéfinition de méthode
-    return "Velo de marque " + marque + "a " + this.getNbRoues() + " roues";
+    return "Velo de marque " + marque + " a " + this.getNbRoues() + " roues";
   }
 
   public void avancer() { // Redéfinition de méthode

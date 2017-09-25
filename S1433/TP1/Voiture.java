@@ -4,13 +4,12 @@ public class Voiture extends VehiculeMotorise {
 		Voiture(String marque, int puissance, int portes)
 		{
 			super(4,marque,puissance);
-			this.puissance = puissance;
 			this.portes = portes;
-		}
+		} 
 		
 		public String toString()
 		{
-			return super.toString() + " avec " + portes + " portes";
+			return super.toString() + "de type voiture" + " avec " + portes + " portes";
 		}
 		
 		public void avancer()
