@@ -66,7 +66,7 @@ public class Annuaire2{
   public Personne chercher(String nom) {
     int index = tabP.indexOf(new Personne(nom,-1));
     if (index == -1)
-      return null;
+      return null; 
     else
       return (Personne)(tabP.get(index));
   }
@@ -82,6 +82,14 @@ public class Annuaire2{
       tabP.remove(index);
       return true;
     }
+  }
+  
+  public void ajouterContenuDe(List<? extends Personne> l)
+  {
+	  for(Personne p:l)
+	  {
+		  this.ajouter(p);
+	  }
   }
   
   /** Programme de test de l'annuaire. */
@@ -100,6 +108,8 @@ public class Annuaire2{
         System.out.println(" A pour Afficher l'annuaire");
         System.out.println(" R pour Rechercher une personne");
         System.out.println(" - pour supprimer une personne");
+        System.out.println(" N pour ajouter une liste de personnes");
+        System.out.println(" V pour tester les nouvelles classes");
         System.out.println(" Q pour Quitter");
         action = input.next().charAt(0); 
         String nom;
@@ -140,6 +150,26 @@ public class Annuaire2{
           else
             System.out.println("OK : "+nom+" supprimé de l'annuaire");
           break;
+        case 'N' :
+        		List l = new ArrayList<Personne>();
+        		Personne p1 = new Personne("Personne1",1234);
+        		Personne p2 = new Personne("Personne2",12345);
+        		Personne p3 = new Personne("Personne3",123456);
+        		Personne p4 = new Personne("Personne4",1234567);
+        		l.add(p1);
+        		l.add(p2);
+        		l.add(p3);
+        		l.add(p4);
+        		ann.ajouterContenuDe(l);
+        		System.out.print("Liste ajoute");
+        		
+        		ann.afficher();
+        		break;
+        case 'V':
+        		Entreprise e = Entreprise.getTestExample();
+        		ann.ajouterContenuDe(e.getPersonnel()); 
+        		ann.afficher();
+        		break;
         case 'Q':
         default:
         }
