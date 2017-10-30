@@ -1,7 +1,6 @@
 import fr.ensmp.info2.annuaire.Personne;
 
 public class CoupleHomogeneGenerique<T> extends CoupleGenerique<T,T>{
-	T X,Y;
 	
 	CoupleHomogeneGenerique(T x,T y)
 	{

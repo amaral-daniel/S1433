@@ -10,7 +10,7 @@ import java.util.*; // pour List, ...
 
 import fr.ensmp.info2.annuaire.Personne; // Utile uniquement pour les tests
 //                                           du main()
-
+ 
 /**
  *  Classe permettant de stocker un couple (x,y) quelconque.
  *   Les paramètres de type X et Y correspondent respectivement 
@@ -18,9 +18,9 @@ import fr.ensmp.info2.annuaire.Personne; // Utile uniquement pour les tests
  */
 public class CoupleGenerique<X,Y> {
     /** Premier élément du couple */
-    private X o1;
+    protected X o1;
     /** Deuxième élément du couple */    
-    private Y o2;
+    protected Y o2;
     
     /** Constructeur. */
     public CoupleGenerique(X premier, Y deuxieme) {
