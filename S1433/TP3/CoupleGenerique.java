@@ -74,6 +74,6 @@ public class CoupleGenerique<X,Y> {
       Object prem1 = cg.premier();
       cg = c2;
       cg.deuxieme();
-
+ 
   }      
 }
